@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<Script>
+function distance(lat1, lon1, lat2, lon2) {
+	var radlat1 = Math.PI * lat1/180
+	var radlat2 = Math.PI * lat2/180
+	var theta = lon1-lon2
+	var radtheta = Math.PI * theta/180
+	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	dist = Math.acos(dist)
+	dist = dist * 180/Math.PI
+	dist = dist * 60 * 1.1515
+	
+	return dist
+}
+//distance between princeton and edison in miles, input data is in degree
+alert (distance(40.343989, -74.651448, 40.518715, -74.412095) + " between princeton and edison in Miles\n");
+
+//distance between philadelphia and edison in miles, input data is in degree
+alert (distance(39.952584, -75.165222, 40.518715, -74.412095)+  " between philadelphia and edison in Miles\n");
+
+//distance between newyork and edison in miles, input data is in degree
+alert (distance(40.712784, -74.005941, 40.518715, -74.412095)+  " between newyork city and edison in Miles\n");
+
+//distance between irving, Tx and edison in miles, input data is in degree
+alert (distance(32.814018, -96.948894, 40.518715, -74.412095)+  " between Irving ,Texas and edison in Miles\n");
+
+//distance between Brazil asnd edison in miles, input data is in degree
+alert (distance(-14.235004, -51.925280, 40.518715, -74.412095)+  " between Brazil and edison in Miles\n");
+</Script>
+</body>
+</html>
